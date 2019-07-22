@@ -138,9 +138,8 @@ class Settings extends Component {
     //  See https://gist.github.com/jlong/2428561 for more information    
     let parser = document.createElement('a');
     parser.href = this.state.AddServerUrl;
-
-    let port = parser.port || "80";
     let protocol = parser.protocol || "http:";
+    let port = parser.port || (parser.protocol == "https:"?"443":"80");
     let path = ""
     if(parser.pathname !== "/" || parser.hash !== "" || parser.search !== ""){
       path = parser.pathname + parser.hash + parser.search;
