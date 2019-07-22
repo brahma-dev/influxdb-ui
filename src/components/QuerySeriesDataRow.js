@@ -10,11 +10,12 @@ class QuerySeriesDataRow extends Component {
     }
   }
   render() {
+    let that = this;
     //  Display data row:
     return (
         <tr>
             {this.props.datarow.map(function(item, index) {
-                return <td key={index}>{this.renderItem(item)}</td>;
+                return <td key={index}>{that.renderItem(item)}</td>;
             })}
         </tr>
     );
